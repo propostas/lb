@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Proposta Comercial — Plataforma Digital</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #080808;
+
+      --surface: rgba(18, 18, 18, 0.82);
+      --surface-2: rgba(25, 25, 25, 0.9);
+
+      --border: rgba(255, 255, 255, 0.07);
+
+      --text: #f3eee7;
+      --text-dim: #9e988f;
+
+      --gold: #c9a84c;
+      --gold-light: #f1d67a;
+
+      --radius: 30px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(201, 168, 76, 0.08), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.03), transparent 30%),
+        var(--bg);
+
+      color: var(--text);
+
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+
+      line-height: 1.7;
+
+      overflow-x: hidden;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: '';
+
+      position: fixed;
+      inset: 0;
+
+      pointer-events: none;
+
+      opacity: .35;
+
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.05'/%3E%3C/svg%3E");
+
+      z-index: 999;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+      padding: 0 32px;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+
+      padding: 110px 0 90px;
+
+      border-bottom: 1px solid var(--border);
+
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+
+      position: absolute;
+
+      left: -20px;
+      top: 70px;
+
+      width: 2px;
+      height: 180px;
+
+      background:
+        linear-gradient(to bottom,
+          var(--gold),
+          transparent);
+    }
+
+    .hero::after {
+      content: '✦';
+
+      position: absolute;
+
+      right: -30px;
+      top: 20px;
+
+      font-size: 260px;
+
+      color: var(--gold);
+
+      opacity: .04;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 10px 18px;
+
+      border-radius: 999px;
+
+      border: 1px solid rgba(201, 168, 76, .25);
+
+      background: rgba(255, 255, 255, .03);
+
+      backdrop-filter: blur(12px);
+
+      color: var(--gold-light);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: .16em;
+
+      margin-bottom: 34px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+
+      font-size: clamp(52px, 8vw, 88px);
+
+      line-height: .98;
+
+      letter-spacing: -.04em;
+
+      font-weight: 900;
+
+      max-width: 780px;
+
+      margin-bottom: 30px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+
+      color: var(--gold-light);
+
+      text-shadow:
+        0 0 30px rgba(201, 168, 76, .22);
+    }
+
+    .hero-sub {
+      max-width: 700px;
+
+      color: var(--text-dim);
+
+      font-size: 19px;
+
+      line-height: 1.9;
+
+      margin-bottom: 52px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .meta-item {
+      min-width: 220px;
+
+      padding: 20px 22px;
+
+      border-radius: 22px;
+
+      border: 1px solid rgba(255, 255, 255, .06);
+
+      background:
+        linear-gradient(180deg,
+          rgba(255, 255, 255, .03),
+          rgba(255, 255, 255, .01));
+
+      backdrop-filter: blur(12px);
+    }
+
+    .meta-item label {
+      display: block;
+
+      margin-bottom: 6px;
+
+      font-size: 10px;
+
+      text-transform: uppercase;
+
+      letter-spacing: .18em;
+
+      color: var(--text-dim);
+    }
+
+    .meta-item span {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    /* SECTION */
+
+    section {
+      position: relative;
+
+      padding: 90px 0;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    section::after {
+      content: '';
+
+      position: absolute;
+
+      left: 0;
+      bottom: -1px;
+
+      width: 140px;
+      height: 1px;
+
+      background:
+        linear-gradient(to right,
+          var(--gold),
+          transparent);
+    }
+
+    .section-label {
+      color: var(--gold-light);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+
+      font-size: clamp(34px, 5vw, 50px);
+
+      line-height: 1.08;
+
+      letter-spacing: -.03em;
+
+      margin-bottom: 34px;
+    }
+
+    /* INTRO */
+
+    .intro-text {
+      max-width: 760px;
+
+      padding-left: 26px;
+
+      border-left: 3px solid var(--gold);
+
+      color: #beb6aa;
+
+      font-size: 18px;
+
+      line-height: 1.9;
+    }
+
+    /* MODULES */
+
+    .modules {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 22px;
+    }
+
+    .module {
+      position: relative;
+
+      padding: 34px;
+
+      border-radius: var(--radius);
+
+      border: 1px solid rgba(255, 255, 255, .06);
+
+      background:
+        linear-gradient(180deg,
+          rgba(255, 255, 255, .03),
+          rgba(255, 255, 255, 0)),
+        var(--surface);
+
+      backdrop-filter: blur(14px);
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .module:hover {
+      transform: translateY(-8px);
+
+      border-color: rgba(201, 168, 76, .25);
+
+      box-shadow:
+        0 25px 50px rgba(0, 0, 0, .35);
+    }
+
+    .module-icon {
+      display: inline-block;
+
+      font-size: 30px;
+
+      margin-bottom: 18px;
+
+      transition: transform .25s ease;
+    }
+
+    .module:hover .module-icon {
+      transform:
+        scale(1.12) rotate(-5deg);
+    }
+
+    .module h3 {
+      font-family: 'Playfair Display', serif;
+
+      font-size: 24px;
+
+      margin-bottom: 18px;
+    }
+
+    .module ul {
+      list-style: none;
+    }
+
+    .module ul li {
+      position: relative;
+
+      padding-left: 18px;
+
+      margin-bottom: 10px;
+
+      color: var(--text-dim);
+
+      font-size: 14px;
+    }
+
+    .module ul li::before {
+      content: '→';
+
+      position: absolute;
+      left: 0;
+
+      color: var(--gold);
+    }
+
+    /* PREVIEWS */
+
+    .previews-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 22px;
+    }
+
+    .preview-card {
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: var(--radius);
+
+      border: 1px solid rgba(255, 255, 255, .06);
+
+      background:
+        linear-gradient(180deg,
+          rgba(255, 255, 255, .03),
+          rgba(255, 255, 255, 0)),
+        var(--surface);
+
+      backdrop-filter: blur(14px);
+
+      transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+    }
+
+    .preview-card:hover {
+      transform: translateY(-6px);
+
+      border-color: rgba(201, 168, 76, .25);
+
+      box-shadow:
+        0 25px 50px rgba(0, 0, 0, .45);
+    }
+
+    .preview-img {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      border-bottom: 1px solid rgba(255, 255, 255, .05);
+    }
+
+    .preview-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+
+      padding: 22px 26px;
+    }
+
+    .preview-label {
+      color: var(--gold-light);
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      margin-bottom: 4px;
+    }
+
+    .preview-title {
+      font-family: 'Playfair Display', serif;
+
+      font-size: 20px;
+    }
+
+    .preview-arrow {
+      color: var(--gold);
+
+      font-size: 20px;
+    }
+
+    .preview-note {
+      margin-top: 28px;
+
+      padding: 24px;
+
+      border-left: 2px solid var(--gold);
+
+      border-radius: 0 20px 20px 0;
+
+      background: rgba(255, 255, 255, .02);
+
+      color: var(--text-dim);
+
+      font-size: 14px;
+    }
+
+    /* TECH */
+
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tech-pill {
+      padding: 10px 18px;
+
+      border-radius: 999px;
+
+      background: rgba(201, 168, 76, .1);
+
+      border: 1px solid rgba(201, 168, 76, .18);
+
+      color: var(--gold-light);
+
+      font-size: 13px;
+      font-weight: 700;
+
+      letter-spacing: .04em;
+
+      backdrop-filter: blur(10px);
+    }
+
+    .tech-note {
+      margin-top: 28px;
+
+      padding: 24px;
+
+      border-left: 2px solid var(--gold);
+
+      border-radius: 0 20px 20px 0;
+
+      background: rgba(255, 255, 255, .02);
+
+      color: var(--text-dim);
+
+      font-size: 14px;
+    }
+
+    /* PRICE */
+
+    .price-section {
+      border: none;
+      padding-top: 0;
+    }
+
+    .price-section::after {
+      display: none;
+    }
+
+    .price-block {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 64px;
+
+      border-radius: 38px;
+
+      border: 1px solid rgba(255, 255, 255, .06);
+
+      background:
+        radial-gradient(circle at top,
+          rgba(201, 168, 76, .08),
+          transparent 40%),
+        #111111;
+
+      box-shadow:
+        0 35px 80px rgba(0, 0, 0, .45),
+        inset 0 1px 0 rgba(255, 255, 255, .04);
+    }
+
+    .price-block::before {
+      content: 'R$';
+
+      position: absolute;
+
+      right: 20px;
+      bottom: -40px;
+
+      font-family: 'Playfair Display', serif;
+
+      font-size: 240px;
+      font-weight: 900;
+
+      color: var(--gold-light);
+
+      opacity: .04;
+    }
+
+    .price-block::after {
+      content: '';
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+      right: 0;
+
+      height: 2px;
+
+      background:
+        linear-gradient(90deg,
+          var(--gold),
+          transparent);
+    }
+
+    .price-main {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+
+      margin: 24px 0 34px;
+    }
+
+    .price-currency {
+      margin-top: 16px;
+
+      color: var(--gold);
+
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .price-value {
+      font-family: 'Playfair Display', serif;
+
+      font-size: clamp(70px, 10vw, 110px);
+
+      line-height: 1;
+
+      color: var(--gold-light);
+
+      text-shadow:
+        0 0 35px rgba(201, 168, 76, .2);
+    }
+
+    .price-desc {
+      max-width: 560px;
+
+      color: var(--text-dim);
+
+      font-size: 15px;
+
+      line-height: 1.8;
+    }
+
+    .parcelas {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 18px;
+
+      margin-top: 40px;
+    }
+
+    .parcela {
+      padding: 28px;
+
+      border-radius: 24px;
+
+      border: 1px solid rgba(255, 255, 255, .05);
+
+      background: rgba(255, 255, 255, .03);
+
+      backdrop-filter: blur(10px);
+    }
+
+    .parcela-num {
+      margin-bottom: 10px;
+
+      color: var(--gold);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: .16em;
+    }
+
+    .parcela-val {
+      font-family: 'Playfair Display', serif;
+
+      font-size: 40px;
+
+      margin-bottom: 8px;
+    }
+
+    .parcela-when {
+      color: var(--text-dim);
+
+      font-size: 13px;
+    }
+
+    /* TIMELINE */
+
+    .timeline {
+      position: relative;
+
+      margin-top: 30px;
+
+      padding-left: 38px;
+
+      border-left: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .tl-item {
+      position: relative;
+
+      padding-bottom: 44px;
+    }
+
+    .tl-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .tl-dot {
+      position: absolute;
+
+      left: -46px;
+      top: 4px;
+
+      width: 16px;
+      height: 16px;
+
+      border-radius: 50%;
+
+      background: var(--gold);
+
+      border: 4px solid var(--bg);
+
+      box-shadow:
+        0 0 24px rgba(201, 168, 76, .4);
+    }
+
+    .tl-phase {
+      margin-bottom: 6px;
+
+      color: var(--gold);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+    }
+
+    .tl-title {
+      font-family: 'Playfair Display', serif;
+
+      font-size: 25px;
+
+      margin-bottom: 8px;
+    }
+
+    .tl-desc {
+      max-width: 640px;
+
+      color: var(--text-dim);
+
+      font-size: 14px;
+
+      line-height: 1.8;
+    }
+
+    /* GUARANTEE */
+
+    .guarantee {
+      display: grid;
+
+      grid-template-columns: auto 1fr;
+
+      gap: 28px;
+
+      padding: 42px;
+
+      border-radius: 32px;
+
+      border: 1px solid rgba(255, 255, 255, .06);
+
+      background:
+        linear-gradient(180deg,
+          rgba(255, 255, 255, .03),
+          rgba(255, 255, 255, 0)),
+        var(--surface);
+
+      backdrop-filter: blur(14px);
+    }
+
+    .guarantee-icon {
+      font-size: 48px;
+    }
+
+    .guarantee h3 {
+      font-family: 'Playfair Display', serif;
+
+      font-size: 30px;
+
+      margin-bottom: 12px;
+    }
+
+    .guarantee p {
+      color: var(--text-dim);
+
+      font-size: 15px;
+
+      line-height: 1.8;
+    }
+
+    /* CTA */
+
+    .cta-section {
+      text-align: center;
+
+      padding: 110px 0;
+    }
+
+    .cta-section h2 {
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      color: var(--text-dim);
+
+      margin-bottom: 42px;
+    }
+
+    .cta-btn {
+      position: relative;
+
+      overflow: hidden;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px 56px;
+
+      border-radius: 999px;
+
+      background: var(--gold);
+
+      color: #090909;
+
+      text-decoration: none;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+
+      transition:
+        transform .2s ease,
+        background .2s ease;
+
+      box-shadow:
+        0 14px 34px rgba(201, 168, 76, .25),
+        inset 0 1px 0 rgba(255, 255, 255, .28);
+    }
+
+    .cta-btn::before {
+      content: '';
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(120deg,
+          transparent 20%,
+          rgba(255, 255, 255, .28),
+          transparent 80%);
+
+      transform: translateX(-120%);
+
+      transition: transform .8s ease;
+    }
+
+    .cta-btn:hover::before {
+      transform: translateX(120%);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-4px);
+
+      background: var(--gold-light);
+    }
+
+    .cta-fine {
+      display: block;
+
+      margin-top: 18px;
+
+      color: var(--text-dim);
+
+      font-size: 12px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+
+      padding: 42px 0;
+
+      border-top: 1px solid var(--border);
+
+      opacity: .75;
+
+      transition: opacity .2s ease;
+    }
+
+    footer:hover {
+      opacity: 1;
+    }
+
+    footer span {
+      color: var(--text-dim);
+
+      font-size: 12px;
+    }
+
+    .footer-ornament {
+      color: var(--gold);
+
+      font-size: 22px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 860px) {
+
+      .modules {
+        grid-template-columns: 1fr;
+      }
+
+      .previews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .parcelas {
+        grid-template-columns: 1fr;
+      }
+
+      .guarantee {
+        grid-template-columns: 1fr;
+      }
+
+      .price-block {
+        padding: 42px 30px;
+      }
+
+      .hero {
+        padding-top: 80px;
+      }
+
+    }
+
+    @media(max-width: 600px) {
+
+      .page {
+        padding: 0 22px;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .hero-meta {
+        flex-direction: column;
+      }
+
+      .meta-item {
+        width: 100%;
+      }
+
+      .price-value {
+        font-size: 76px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+      <div class="tag">
+        ✦ Proposta Comercial · 2026
+      </div>
+
+      <h1>
+        Sua loja digital,<br />
+        <em>construída do zero.</em>
+      </h1>
+
+      <p class="hero-sub">
+        Uma plataforma completa de e-commerce, com design profissional,
+        experiência premium e estrutura preparada para crescimento.
+        Tudo desenvolvido sob medida para sua marca.
+      </p>
+
+      <div class="hero-meta">
+
+        <div class="meta-item">
+          <label>Validade da proposta</label>
+          <span>15 dias</span>
+        </div>
+
+        <div class="meta-item">
+          <label>Prazo de entrega</label>
+          <span>45 até 60 dias úteis</span>
+        </div>
+
+        <!-- <div class="meta-item">
+          <label>Investimento total</label>
+          <span>R$ 6.000,00</span>
+        </div> -->
+
+      </div>
+
+    </header>
+
+    <!-- INTRO -->
+
+    <section>
+
+      <div class="section-label">
+        A proposta
+      </div>
+
+      <h2>
+        O que você está contratando
+      </h2>
+
+      <p class="intro-text">
+        Não é apenas um site. É uma plataforma completa de vendas,
+        desenvolvida sob medida para sua marca, com painel administrativo,
+        área do cliente, integração de pagamento e design profissional de todas as telas.
+        O desenvolvimento só será iniciado após aprovação completa do layout e identidade visual.
+      </p>
+
+    </section>
+
+    <!-- MODULES -->
+
+    <section>
+
+      <div class="section-label">
+        Escopo completo
+      </div>
+
+      <h2>
+        Tudo que será entregue
+      </h2>
+
+      <div class="modules">
+
+        <div class="module">
+          <span class="module-icon">🎨</span>
+
+          <h3>Design Profissional</h3>
+
+          <ul>
+            <li>Design personalizado de todas as telas</li>
+            <li>Experiência visual premium</li>
+            <li>Layouts pensados para conversão</li>
+            <li>Aprovação do design antes do desenvolvimento</li>
+            <li>Design responsivo para mobile e desktop</li>
+          </ul>
+        </div>
+
+        <div class="module">
+          <span class="module-icon">🌐</span>
+
+          <h3>Site Público</h3>
+
+          <ul>
+            <li>Banners promocionais dinâmicos</li>
+            <li>Catálogo completo de produtos</li>
+            <li>Página detalhada de produto</li>
+            <li>Produtos semelhantes</li>
+            <li>Página de contato e suporte</li>
+          </ul>
+        </div>
+
+        <div class="module">
+          <span class="module-icon">📦</span>
+
+          <h3>Cadastro de Produtos</h3>
+
+          <ul>
+            <li>Cadastro de 80 produtos</li>
+            <li>Inclusão de fotos dos produtos</li>
+            <li>Descrição completa de cada item</li>
+            <li>Imagem com tabela de medidas</li>
+            <li>Publicação organizada no catálogo</li>
+          </ul>
+        </div>
+
+        <div class="module">
+          <span class="module-icon">🔐</span>
+
+          <h3>Área do Cliente</h3>
+
+          <ul>
+            <li>Login seguro</li>
+            <li>Histórico de pedidos</li>
+            <li>Rastreamento de entrega</li>
+            <li>Gerenciamento de endereços</li>
+          </ul>
+        </div>
+
+        <div class="module">
+          <span class="module-icon">⚙️</span>
+
+          <h3>Painel Administrativo</h3>
+
+          <ul>
+            <li>Gestão de pedidos</li>
+            <li>Controle de clientes</li>
+            <li>Cadastro de usuários internos</li>
+            <li>Dashboard administrativo</li>
+            <li>Controle completo da plataforma</li>
+          </ul>
+        </div>
+
+        <div class="module">
+          <span class="module-icon">💳</span>
+
+          <h3>Pagamento Integrado</h3>
+
+          <ul>
+            <li>Integração com Mercado Pago ou Stripe</li>
+            <li>Pagamento via Pix</li>
+            <li>Cartão e boleto</li>
+            <li>Confirmação automática de pagamento</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PREVIEWS -->
+
+    <section>
+
+      <div class="section-label">
+        Referências visuais
+      </div>
+
+      <h2>
+        Exemplos do design que será criado
+      </h2>
+
+      <div class="previews-grid">
+
+        <figure class="preview-card">
+
+          <img class="preview-img" src="banner.png" alt="Exemplo de página inicial da loja" loading="lazy" />
+
+          <figcaption class="preview-meta">
+
+            <div>
+              <div class="preview-label">
+                Tela 01
+              </div>
+              <div class="preview-title">
+                Página inicial
+              </div>
+            </div>
+
+            <span class="preview-arrow">
+              →
+            </span>
+
+          </figcaption>
+
+        </figure>
+
+        <figure class="preview-card">
+
+          <img class="preview-img" src="produto-indivdual.png" alt="Exemplo de página individual de produto" loading="lazy" />
+
+          <figcaption class="preview-meta">
+
+            <div>
+              <div class="preview-label">
+                Tela 02
+              </div>
+              <div class="preview-title">
+                Página de produto
+              </div>
+            </div>
+
+            <span class="preview-arrow">
+              →
+            </span>
+
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+      <div class="preview-note">
+        <strong>Importante:</strong>
+        as imagens acima são <em>referências visuais</em> do nível de design e acabamento entregues.
+        O layout final será criado sob medida para a identidade da sua marca e aprovado por você antes do início do desenvolvimento.
+      </div>
+
+    </section>
+
+    <!-- TECH -->
+
+    <section>
+
+      <div class="section-label">
+        Tecnologia
+      </div>
+
+      <h2>
+        Construído com tecnologia moderna
+      </h2>
+
+      <div class="tech-grid">
+
+        <span class="tech-pill">.NET 11</span>
+        <span class="tech-pill">Clean Architecture</span>
+        <span class="tech-pill">Vue 3</span>
+        <span class="tech-pill">Pinia</span>
+        <span class="tech-pill">JWT Auth</span>
+        <span class="tech-pill">PostgreSQL</span>
+        <span class="tech-pill">ASP.NET Identity</span>
+        <span class="tech-pill">Entity Framework Core</span>
+
+      </div>
+
+      <div class="tech-note">
+        <strong>Por que isso importa:</strong>
+        a plataforma será construída utilizando arquitetura moderna,
+        organizada e escalável, preparada para futuras evoluções sem comprometer estabilidade ou performance.
+      </div>
+
+    </section>
+
+    <!-- PRICE -->
+
+    <section class="price-section">
+
+      <div class="price-block">
+
+        <div class="section-label">
+          Investimento
+        </div>
+
+        <h2>
+          Valor total do projeto
+        </h2>
+
+        <div class="price-main">
+
+          <span class="price-currency">
+            R$
+          </span>
+
+          <span class="price-value">
+            6.000
+          </span>
+
+        </div>
+
+        <p class="price-desc">
+          O pagamento será realizado em duas etapas vinculadas às entregas do projeto.
+          O desenvolvimento será iniciado somente após aprovação completa do design das telas.
+        </p>
+
+        <div class="parcelas">
+
+          <div class="parcela">
+
+            <div class="parcela-num">
+              1ª Parcela · 50%
+            </div>
+
+            <div class="parcela-val">
+              R$ 3.000
+            </div>
+
+            <div class="parcela-when">
+              Após aprovação do design e início oficial do projeto
+            </div>
+
+          </div>
+
+          <div class="parcela">
+
+            <div class="parcela-num">
+              2ª Parcela · 50%
+            </div>
+
+            <div class="parcela-val">
+              R$ 3.000
+            </div>
+
+            <div class="parcela-when">
+              Após entrega final e aprovação da plataforma
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- TIMELINE -->
+
+    <section>
+
+      <div class="section-label">
+        Processo
+      </div>
+
+      <h2>
+        Etapas do projeto
+      </h2>
+
+      <div class="timeline">
+
+        <div class="tl-item">
+
+          <div class="tl-dot"></div>
+
+          <div class="tl-phase">
+            Etapa 1
+          </div>
+
+          <div class="tl-title">
+            Briefing & Planejamento
+          </div>
+
+          <div class="tl-desc">
+            Levantamento de referências, identidade visual,
+            objetivos do projeto e definição estratégica da plataforma.
+          </div>
+
+        </div>
+
+        <div class="tl-item">
+
+          <div class="tl-dot"></div>
+
+          <div class="tl-phase">
+            Etapa 2
+          </div>
+
+          <div class="tl-title">
+            Criação do Design das Telas
+          </div>
+
+          <div class="tl-desc">
+            Desenvolvimento completo do layout visual e experiência do usuário.
+            O desenvolvimento técnico inicia apenas após aprovação do design.
+          </div>
+
+        </div>
+
+        <div class="tl-item">
+
+          <div class="tl-dot"></div>
+
+          <div class="tl-phase">
+            Etapa 3
+          </div>
+
+          <div class="tl-title">
+            Desenvolvimento da Plataforma
+          </div>
+
+          <div class="tl-desc">
+            Implementação do backend, frontend,
+            painel administrativo, integrações e funcionalidades.
+          </div>
+
+        </div>
+
+        <div class="tl-item">
+
+          <div class="tl-dot"></div>
+
+          <div class="tl-phase">
+            Etapa 4
+          </div>
+
+          <div class="tl-title">
+            Cadastro dos Produtos
+          </div>
+
+          <div class="tl-desc">
+            Inclusão de 80 produtos com fotos,
+            descrição detalhada e imagem contendo tabela de medidas.
+          </div>
+
+        </div>
+
+        <div class="tl-item">
+
+          <div class="tl-dot"></div>
+
+          <div class="tl-phase">
+            Etapa 5
+          </div>
+
+          <div class="tl-title">
+            Testes & Publicação
+          </div>
+
+          <div class="tl-desc">
+            Revisão final, correções,
+            validação da plataforma e publicação oficial do projeto.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- GUARANTEE -->
+
+    <section>
+
+      <div class="section-label">
+        Garantia
+      </div>
+
+      <h2>
+        Segurança para o seu projeto
+      </h2>
+
+      <div class="guarantee">
+
+        <div class="guarantee-icon">
+          🛡️
+        </div>
+
+        <div>
+
+          <h3>
+            Garantia de 30 dias pós-entrega
+          </h3>
+
+          <p>
+            Qualquer bug ou problema técnico identificado após a entrega
+            será corrigido sem custo adicional.
+            Durante esse período você também terá suporte para dúvidas
+            e auxílio operacional da plataforma.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <div class="cta-section">
+
+      <h2>
+        Pronto para começar?
+      </h2>
+
+      <p>
+        Após aprovação da proposta iniciamos imediatamente
+        a etapa de design das telas da plataforma.
+      </p>
+
+      <a class="cta-btn" href="https://wa.me/5535999527865?text=Olá! Gostaria de iniciar o projeto." target="_blank" rel="noopener noreferrer" aria-label="Abrir chat do WhatsApp para iniciar o projeto">
+        Quero iniciar o projeto →
+      </a>
+
+      <span class="cta-fine">
+        Proposta válida por 15 dias · Vagas limitadas
+      </span>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+      <span>
+        Proposta comercial gerada em 2026
+      </span>
+
+      <span class="footer-ornament">
+        ✦
+      </span>
+
+      <span>
+        Documento confidencial
+      </span>
+
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
